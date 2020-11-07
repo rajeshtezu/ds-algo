@@ -1,7 +1,11 @@
 /*
- * Write a function called maxSubarraySum which accepts an array of integers
+ * Q. Write a function called maxSubarraySum which accepts an array of integers
  * and a number called n. The function should calculate the maximum sum of n
  * consecutive elements in the array.
+ * 
+ * Hint: 
+ * 1. Store the sum of 1st n items in a variable.
+ * 2. From the next n consecutive items pick the last item and add to the stored sum and subtract the 1st item from the sum of previous n items.
  */
 
 function maxSubarraySum(arr, num) {
