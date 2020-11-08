@@ -27,7 +27,29 @@ Computer file system
 
 Binary Tree : Each node can have at most 2 children.
 
-BST  : Binary tree with items stored in sorted order.
+BST : Binary tree with items stored in sorted order.
   - Every parent node has at most 2 children.
   - Every node to the left of a parent node is always less than the parent.
   - Every node to the right of a parent node is always greater than the parent.
+
+---------------------------------------------------------------------------------------------
+
+=> Tree traversal:
+Two ways:
+  1. Breadth-first search (BFS) - same level 1st
+  2. Depth-first search (DFS)
+      - In-order
+      - Pre-order
+      - Post-order
+
+
+=> BFS:
+
+steps (Iteratively):
+  - Create a queue (array) and a variable (array) to store the values of nodes visited
+  - Place the root node in the queue
+  - Loop through as long as there is anything in the queue
+    - Dequeue a node from the queue and push the value of the node into the variable that stores the nodes
+    - If there is a LEFT node on the node dequeued, add it to the queue
+    - If there is a RIGHT node on the node dequeued, add it to the queue
+  - Return the variable that stores the values
