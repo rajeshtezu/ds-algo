@@ -155,7 +155,7 @@ class BinarySearchTree {
   }
 }
 
-function main() {
+function bstMain() {
   const bst = new BinarySearchTree();
 
   bst.insert(1);
@@ -177,4 +177,4 @@ function main() {
   console.log('DFS in-order: ', dfsInOrder);
 }
 
-main();
+bstMain();
