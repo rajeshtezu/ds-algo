@@ -31,4 +31,8 @@ Removing from a Heap:
   2. Replace with the most recently added
   3. Adjust (Bubble down/ Sink down) : Replace with largest child, repeat until find right spot.
 
+-----------------------------------------
 
+Insertion - O(log(n))
+Removal - O(log(n))
+Search - O(n)
