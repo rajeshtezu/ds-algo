@@ -43,7 +43,7 @@ Two ways:
       - Post-order
 
 
-=> BFS:
+1. BFS:
 
 steps (Iteratively):
   - Create a queue (array) and a variable (array) to store the values of nodes visited
@@ -53,3 +53,47 @@ steps (Iteratively):
     - If there is a LEFT node on the node dequeued, add it to the queue
     - If there is a RIGHT node on the node dequeued, add it to the queue
   - Return the variable that stores the values
+
+
+2.1 DFS - PreOrder (parent -> left -> right)
+- First element is root.
+
+  Steps (Recursively):
+  - Create a variable (array) to store the values of nodes visited
+  - Store the root of the BST in a variable called current
+  - Write a helper function which accepts a node
+    - Push the value of the node to the variable that store the values
+    - If the node has a LEFT node, call the helper function with the LEFT node
+    - If the node has a RIGHT node, call the helper function with the RIGHT node
+  - Invoke the helper function with the current variable
+  - Return the array of values
+
+2.2 DFS - PostOrder (left -> right -> parent)
+- Last element is root.
+
+  Steps (Recursively)::
+  - Create a variable to store the values of node visited
+  - Store the root of the BST in a variable called current
+  - Write a helper function which accepts a node
+    - If the node has a LEFT property, call the helper function with the LEFT property
+    - If the node has a RIGHT property, call the helper function with the RIGHT property
+    - Push the value of the node to the variable that stores the values
+  - Invoke the helper function with current variable
+  - Return the array of values
+
+2.3 DFS - InOrder (left -> parent -> right)
+
+Steps (Recursively):
+- Same as before (pre, post order), but put the push in between left and right traversal.
+
+------------------------------------------------
+
+Use:
+
+DFS - When tree is wider [Save space complexity]
+BFS - When tree is deeper [Save space complexity]
+
+DFS - InOrder            --> sorted.
+DFS - PreOrder/PostOrder --> Can be used to actually store in DB or any other persistent storage.
+
+- Using InOrder & Post/Pre-Order we can construct a unique tree.

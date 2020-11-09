@@ -102,6 +102,57 @@ class BinarySearchTree {
 
     return data;
   }
+
+  /**
+   * Depth-first search (Recursive) : Pre-order
+   */
+  dfsPreOrder() {
+    let data = [];
+
+    function traverse(node: TreeNode) {
+      data.push(node.value);
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+    }
+
+    traverse(this.root);
+
+    return data;
+  }
+
+  /**
+   * Depth-first search (Recursive) : Post-order
+   */
+  dfsPostOrder() {
+    let data = [];
+
+    function traverse(node: TreeNode) {
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+      data.push(node.value);
+    }
+
+    traverse(this.root);
+
+    return data;
+  }
+
+  /**
+   * Depth-first search (Recursive) : In-order
+   */
+  dfsInOrder() {
+    let data = [];
+
+    function traverse(node: TreeNode) {
+      if (node.left) traverse(node.left);
+      data.push(node.value);
+      if (node.right) traverse(node.right);
+    }
+
+    traverse(this.root);
+
+    return data;
+  }
 }
 
 function main() {
@@ -116,8 +167,14 @@ function main() {
   bst.insert(23);
 
   const bfs = bst.bfsIterative();
+  const dfsPreOrder = bst.dfsPreOrder();
+  const dfsPostOrder = bst.dfsPostOrder();
+  const dfsInOrder = bst.dfsInOrder();
 
   console.log('BFS: ', bfs);
+  console.log('DFS pre-order: ', dfsPreOrder);
+  console.log('DFS post-order: ', dfsPostOrder);
+  console.log('DFS in-order: ', dfsInOrder);
 }
 
 main();
