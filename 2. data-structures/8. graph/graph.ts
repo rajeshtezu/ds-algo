@@ -131,5 +131,3 @@ console.log(result);
 //       D --- E
 //        \   /
 //          F
-
-// Test
