@@ -1,5 +1,12 @@
+/**
+ * Object with key as vertex and value as its directly connected vertices
+ */
+interface IAdjacencyList {
+  [vertex: string]: string[];
+}
+
 class Graph {
-  adjacencyList = {};
+  adjacencyList: IAdjacencyList = {};
 
   constructor() {
     this.adjacencyList = {};
