@@ -41,21 +41,23 @@ class WeightedGraph {
         break;
       }
       if (smallest || distances[smallest] !== Infinity) {
-        for (let neighbor in this.adjacencyList[smallest]) {
-          //find neighboring node
-          let nextNode = this.adjacencyList[smallest][neighbor];
+        // console.log(">>>>>>>", this.adjacencyList[smallest]);
+
+        for (let neighbor of this.adjacencyList[smallest]) {
+          // console.log(smallest, "======", neighbor);
           //calculate new distance to neighboring node
-          let candidate = distances[smallest] + nextNode.weight;
-          let nextNeighbor = nextNode.node;
-          if (candidate < distances[nextNeighbor]) {
+          let candidate = distances[smallest] + neighbor.weight;
+          let neighborNode = neighbor.node;
+          if (candidate < distances[neighborNode]) {
             //updating new smallest distance to neighbor
-            distances[nextNeighbor] = candidate;
+            distances[neighborNode] = candidate;
             //updating previous - How we got to neighbor
-            previous[nextNeighbor] = smallest;
+            previous[neighborNode] = smallest;
             //enqueue in priority queue with new priority
-            nodes.enqueue(nextNeighbor, candidate);
+            nodes.enqueue(neighborNode, candidate);
           }
         }
+        // console.log("------------");
       }
     }
     return path.concat(smallest).reverse();
@@ -154,4 +156,5 @@ graph.addEdge("D", "E", 3);
 graph.addEdge("D", "F", 1);
 graph.addEdge("E", "F", 1);
 
-graph.Dijkstra("A", "E");
+const dresult = graph.Dijkstra("A", "E");
+console.log("Path : ", dresult);
