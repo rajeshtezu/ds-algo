@@ -1,3 +1,5 @@
+# Greedy Algorithm
+
 ## Dijkstra's Algorithm
 
 - Finds the shortest path between two vertices on a graph.
@@ -35,7 +37,7 @@
 
 ---
 
-Improving Dijkstra's
+## Improving Dijkstra's
 
 - Dijkstra's algorithm is greedy! That can cause problems!
 - We can improve this algorithm by adding a heuristics (a best guess)
